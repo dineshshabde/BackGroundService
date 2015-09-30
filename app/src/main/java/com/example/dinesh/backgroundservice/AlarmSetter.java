@@ -26,7 +26,7 @@ public class AlarmSetter extends IntentService {
         synchronized (intent) {
             while (true) {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(10000);
                     Intent localIntent = new Intent(Constants.BROADCAST_ACTION).putExtra(Constants.EXTENDED_DATA_STATUS, 108);
                     LocalBroadcastManager.getInstance(this).sendBroadcast(localIntent);
                     Log.d(TAG, "onHandleIntent I hope this will keep on executing");

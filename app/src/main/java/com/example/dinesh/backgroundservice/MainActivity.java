@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, AlarmSetter.class);
         startService(intent);
         IntentFilter intentFilter = new IntentFilter(Constants.BROADCAST_ACTION);
-        BroadCastReceiver broadCastReceiver = new BroadCastReceiver();
+        BroadCastReceiver broadCastReceiver = new BroadCastReceiver(MainActivity.this);
         LocalBroadcastManager.getInstance(this).registerReceiver(broadCastReceiver, intentFilter);
         setContentView(R.layout.activity_main);
     }
